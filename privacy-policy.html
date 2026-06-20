@@ -26,24 +26,32 @@ ul { padding-left: 20px; }
 .back { display: inline-block; margin-bottom: 24px; color: #8B949E; }
 hr { border: none; border-top: 1px solid #30363D; margin: 32px 0; }
 code { background: #161B22; padding: 2px 6px; border-radius: 4px; font-size: 14px; }
+.note { background:#161B22; border:1px solid #30363D; border-radius:10px; padding:14px 16px; }
 </style>
 </head>
 <body>
 <a class="back" href="./">← Back to apps</a>
 <h1>Privacy Policy</h1>
-<p class="muted">Last updated: April 10, 2026</p>
+<p class="muted">Last updated: June 20, 2026</p>
 
 <p>This privacy policy covers all iOS applications published under the developer name <strong>Tabish Hassan</strong> on the Apple App Store. It applies collectively to every app in the portfolio unless a specific app ships its own supplemental policy inside the app.</p>
 
+<div class="note">
+<strong>Two kinds of apps.</strong> Most of our apps are <strong>offline</strong> and store your data
+locally on your device. A few apps are <strong>cloud-connected</strong> and require an account to work —
+for example <strong>Project Hub</strong>, a 1:1 chat with the developer. Cloud-connected apps are covered
+in the “Cloud-Connected Apps” section below, which governs them where it differs from the general terms.
+</div>
+
 <h2>Summary</h2>
 <ul>
-  <li>Your data is stored <strong>locally on your device</strong> using Apple's SwiftData framework.</li>
-  <li>We do <strong>not</strong> collect, sell, or share your personal content with anyone.</li>
-  <li>We do <strong>not</strong> require you to create an account or sign in.</li>
-  <li>Some apps display third-party ads (Google AdMob) in the free tier. Premium subscribers see no ads.</li>
+  <li>For most apps, your data is stored <strong>locally on your device</strong> using Apple's SwiftData framework, and no account is required.</li>
+  <li><strong>Cloud-connected apps</strong> (e.g. Project Hub) require sign-in and store your account and messages on <strong>Google Firebase</strong> servers — see the dedicated section below.</li>
+  <li>We do <strong>not</strong> sell your personal content, and we do <strong>not</strong> track you across other apps or websites.</li>
+  <li>Some offline apps display third-party ads (Google AdMob) in the free tier. Premium subscribers see no ads. Cloud-connected apps like Project Hub contain <strong>no ads</strong>.</li>
 </ul>
 
-<h2>Data We Access</h2>
+<h2>Data We Access (Offline Apps)</h2>
 <p>Depending on the specific app and the features you use, the following data may be accessed locally on your device:</p>
 <ul>
   <li>Content you create in the app (notes, habits, moods, flashcards, budgets, books, etc.)</li>
@@ -52,15 +60,35 @@ code { background: #161B22; padding: 2px 6px; border-radius: 4px; font-size: 14p
   <li>Photos and camera (only for apps that request picker permission on demand)</li>
   <li>Purchase receipts (processed by Apple StoreKit)</li>
 </ul>
-<p>All of the above is processed and stored on your device. None of it is transmitted to servers we own or operate.</p>
+<p>For these offline apps, all of the above is processed and stored on your device. None of it is transmitted to servers we own or operate.</p>
+
+<h2>Cloud-Connected Apps (e.g. Project Hub)</h2>
+<p>Some apps need an account and a server to work. <strong>Project Hub</strong> is a one-to-one consultation
+chat that connects you directly with the developer. These apps use <strong>Google Firebase</strong> and
+collect and store the following on Firebase servers:</p>
+<ul>
+  <li><strong>Account information</strong> — your name and email address when you sign up with Email, Google, or Sign in with Apple. If you continue as a Guest, you may optionally provide a name and contact email so we can reply.</li>
+  <li><strong>Messages &amp; content</strong> — the text (and, where supported, images, documents, and voice messages) you send in your conversation.</li>
+  <li><strong>Identifiers</strong> — a unique account identifier (Firebase user ID) and, if you enable notifications, a device push token used to deliver message alerts.</li>
+  <li><strong>Project details you choose to share</strong> — e.g. a project category, budget, timeline, or company name.</li>
+</ul>
+<p>This data is used solely to operate the service: to create and secure your account, deliver your
+messages to the developer (and replies back to you) in real time, and send you reply notifications if
+you enable them. These apps contain <strong>no advertising</strong>, do <strong>no</strong> behavioral
+tracking, and do <strong>not</strong> collect the advertising identifier (IDFA), location, or health data.</p>
+<p>You can <strong>permanently delete your account, profile, and entire conversation</strong> at any time
+from <em>Settings → Delete Account</em> inside the app. Conversations include safety tools: you can report
+content, and the developer can block users and remove content that violates the app's Terms of Use.</p>
 
 <h2>Third-Party Services</h2>
 <ul>
+  <li><strong>Google Firebase</strong> (Authentication, Cloud Firestore, Cloud Storage, Cloud Messaging) — used by cloud-connected apps such as Project Hub to store your account, messages, and attachments and to power real-time delivery and push notifications. Firebase processes this data on Google's servers on our behalf. See <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase's privacy information</a> and <a href="https://policies.google.com/privacy" rel="noopener">Google's Privacy Policy</a>.</li>
+  <li><strong>Sign in with Apple</strong> &amp; <strong>Google Sign-In</strong> — used only to authenticate you in cloud-connected apps. If you use Apple's “Hide My Email,” we receive a private relay address.</li>
   <li><strong>Apple StoreKit</strong> — processes in-app purchases and subscriptions. Governed by Apple's privacy policy.</li>
   <li><strong>Apple iCloud</strong> — if you enable iCloud sync, your data syncs via your Apple ID. Managed by Apple; we have no access.</li>
   <li><strong>Apple HealthKit</strong> — for apps that use it, reads the specific data types you authorize. We never write, upload, or share HealthKit data.</li>
-  <li><strong>Google AdMob</strong> — <em>in apps that display ads</em>, Google's Mobile Ads SDK may access the Advertising Identifier (IDFA) and device diagnostics to serve and measure ads. This happens only if you consent via the Apple App Tracking Transparency prompt. You can opt out in iOS Settings → Privacy & Security → Tracking. See <a href="https://policies.google.com/technologies/ads" rel="noopener">Google's Ads privacy policy</a>.</li>
-  <li><strong>Google User Messaging Platform (UMP)</strong> — for GDPR-region users, shows a consent dialog before any ad network is initialized.</li>
+  <li><strong>Google AdMob</strong> — <em>in offline apps that display ads</em>, Google's Mobile Ads SDK may access the Advertising Identifier (IDFA) and device diagnostics to serve and measure ads. This happens only if you consent via the Apple App Tracking Transparency prompt. You can opt out in iOS Settings → Privacy &amp; Security → Tracking. See <a href="https://policies.google.com/technologies/ads" rel="noopener">Google's Ads privacy policy</a>.</li>
+  <li><strong>Google User Messaging Platform (UMP)</strong> — for GDPR-region users of ad-supported apps, shows a consent dialog before any ad network is initialized.</li>
   <li><strong>Open Library API</strong> — ReadingLog sends book search queries to openlibrary.org over HTTPS. No personal identifiers are transmitted.</li>
 </ul>
 
@@ -69,17 +97,18 @@ code { background: #161B22; padding: 2px 6px; border-radius: 4px; font-size: 14p
 <ul>
   <li>Any app listed in the Apple App Store <strong>Kids</strong> category.</li>
   <li>Any app targeted at children under 13.</li>
-  <li>Any app that does not display the "Remove Ads" benefit on its paywall.</li>
+  <li>Any cloud-connected app such as Project Hub (these contain no ads).</li>
 </ul>
 
 <h2>Children's Privacy</h2>
-<p>We do not knowingly collect personal information from children under 13. Apps designed for children operate entirely offline, do not include third-party analytics or behavioral advertising, and comply with the Apple App Store Kids category rules and COPPA.</p>
+<p>We do not knowingly collect personal information from children under 13. Apps designed for children operate entirely offline, do not include third-party analytics or behavioral advertising, and comply with the Apple App Store Kids category rules and COPPA. Cloud-connected apps such as Project Hub are not directed to children under 13.</p>
 
-<h2>Data Retention & Deletion</h2>
-<p>Because all data is stored locally on your device, you can delete everything at any time by deleting the app or clearing data from the in-app Settings screen. No residual data remains on our servers because we don't operate any.</p>
+<h2>Data Retention &amp; Deletion</h2>
+<p>For offline apps, all data is stored locally on your device — you can delete everything at any time by deleting the app or clearing data from the in-app Settings screen, and no residual data remains on servers because we do not operate any for those apps.</p>
+<p>For cloud-connected apps (e.g. Project Hub), we retain your account and messages while your account exists. You can permanently delete your account and all associated data at any time from <em>Settings → Delete Account</em> in the app, which removes it from our Firebase database and authentication system.</p>
 
 <h2>Your Rights (GDPR, CCPA)</h2>
-<p>If you are located in the EU, UK, or California you have rights including access, rectification, erasure, and objection regarding personal data. Since we do not store your personal data on any servers, you exercise these rights directly on your device. For any questions, contact us at the email below.</p>
+<p>If you are located in the EU, UK, or California you have rights including access, rectification, erasure, and objection regarding personal data. For offline apps you exercise these directly on your device. For cloud-connected apps you can delete your data in-app, or contact us for any other request at the email below.</p>
 
 <h2>Changes to This Policy</h2>
 <p>If we update this policy, the revised version will be posted at this URL with an updated "Last updated" date. Material changes will be communicated through an in-app notice where feasible.</p>
