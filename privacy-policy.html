@@ -32,26 +32,27 @@ code { background: #161B22; padding: 2px 6px; border-radius: 4px; font-size: 14p
 <body>
 <a class="back" href="./">← Back to apps</a>
 <h1>Privacy Policy</h1>
-<p class="muted">Last updated: June 20, 2026</p>
+<p class="muted">Last updated: August 10, 2026</p>
 
 <p>This privacy policy covers all iOS applications published under the developer name <strong>Tabish Hassan</strong> on the Apple App Store. It applies collectively to every app in the portfolio unless a specific app ships its own supplemental policy inside the app.</p>
 
 <div class="note">
-<strong>Two kinds of apps.</strong> Most of our apps are <strong>offline</strong> and store your data
-locally on your device. A few apps are <strong>cloud-connected</strong> and require an account to work —
-for example <strong>Project Hub</strong>, a 1:1 chat with the developer. Cloud-connected apps are covered
-in the “Cloud-Connected Apps” section below, which governs them where it differs from the general terms.
+<strong>Two kinds of apps.</strong> Most of our apps are <strong>offline-first</strong> and keep the content
+you create on your device. A few apps are <strong>cloud-connected</strong> and require an account to work —
+for example <strong>Project Hub</strong>, a 1:1 chat with the developer. Cloud-connected apps are covered in
+the “Cloud-Connected Apps” section below, which governs them where it differs from the general terms.
 </div>
 
 <h2>Summary</h2>
 <ul>
-  <li>For most apps, your data is stored <strong>locally on your device</strong> using Apple's SwiftData framework, and no account is required.</li>
+  <li>For offline-first apps, the content you create (notes, habits, moods, budgets, logs, etc.) is stored <strong>locally on your device</strong> using Apple's SwiftData framework, and no account is required.</li>
   <li><strong>Cloud-connected apps</strong> (e.g. Project Hub) require sign-in and store your account and messages on <strong>Google Firebase</strong> servers — see the dedicated section below.</li>
+  <li>Some offline-first apps use a small number of network services for <strong>crash reporting</strong> and an optional <strong>invite/referral</strong> feature. These never receive the content you create in the app. See “Services Used by Offline-First Apps”.</li>
   <li>We do <strong>not</strong> sell your personal content, and we do <strong>not</strong> track you across other apps or websites.</li>
-  <li>Some offline apps display third-party ads (Google AdMob) in the free tier. Premium subscribers see no ads. Cloud-connected apps like Project Hub contain <strong>no ads</strong>.</li>
+  <li>Some offline-first apps display third-party ads (<strong>InMobi</strong>) in the free tier. Premium subscribers see no ads. Cloud-connected apps like Project Hub contain <strong>no ads</strong>.</li>
 </ul>
 
-<h2>Data We Access (Offline Apps)</h2>
+<h2>Data We Access (Offline-First Apps)</h2>
 <p>Depending on the specific app and the features you use, the following data may be accessed locally on your device:</p>
 <ul>
   <li>Content you create in the app (notes, habits, moods, flashcards, budgets, books, etc.)</li>
@@ -60,7 +61,26 @@ in the “Cloud-Connected Apps” section below, which governs them where it dif
   <li>Photos and camera (only for apps that request picker permission on demand)</li>
   <li>Purchase receipts (processed by Apple StoreKit)</li>
 </ul>
-<p>For these offline apps, all of the above is processed and stored on your device. None of it is transmitted to servers we own or operate.</p>
+<p><strong>The content you create is never uploaded to us.</strong> It stays on your device (and in your own
+iCloud backup, if you have that enabled) and is not transmitted to any server we operate. The limited
+network services described in the next section receive only diagnostic and account-free identifiers —
+never your notes, entries, photos, health data, or other app content.</p>
+
+<h2>Services Used by Offline-First Apps</h2>
+<p>Even though your content stays on your device, some offline-first apps use these services:</p>
+<ul>
+  <li><strong>Firebase Crashlytics (Google)</strong> — collects anonymous crash reports and diagnostic data
+      (device model, iOS version, stack traces, and the sequence of events leading to a crash) so we can fix
+      bugs. Crash data is not linked to your identity, is not used for advertising, and never contains the
+      content you create in the app.</li>
+  <li><strong>Invite / referral feature (Firebase)</strong> — <em>only in apps that offer it, and only if you use it.</em>
+      When you open the invite screen, the app creates an <strong>anonymous</strong> Firebase account. This is not a
+      login: it has no name, no email, and no password, and it exists solely to attach an invite code to a device.
+      We store the invite code, how many invites have been redeemed, and whether a reward has been granted.
+      No personal information and no app content is stored.</li>
+  <li><strong>InMobi</strong> — advertising in ad-supported apps. See “Advertising” below.</li>
+  <li><strong>Open Library API</strong> — ReadingLog sends book search queries to openlibrary.org over HTTPS. No personal identifiers are transmitted.</li>
+</ul>
 
 <h2>Cloud-Connected Apps (e.g. Project Hub)</h2>
 <p>Some apps need an account and a server to work. <strong>Project Hub</strong> is a one-to-one consultation
@@ -82,33 +102,62 @@ content, and the developer can block users and remove content that violates the 
 
 <h2>Third-Party Services</h2>
 <ul>
-  <li><strong>Google Firebase</strong> (Authentication, Cloud Firestore, Cloud Storage, Cloud Messaging) — used by cloud-connected apps such as Project Hub to store your account, messages, and attachments and to power real-time delivery and push notifications. Firebase processes this data on Google's servers on our behalf. See <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase's privacy information</a> and <a href="https://policies.google.com/privacy" rel="noopener">Google's Privacy Policy</a>.</li>
+  <li><strong>InMobi</strong> — <em>in apps that display ads</em>, the InMobi SDK may access the Advertising
+      Identifier (IDFA), coarse device and connection information, and ad-interaction events in order to serve
+      and measure advertising. On iOS, the IDFA is only accessed if you grant permission through Apple's
+      App Tracking Transparency prompt; if you decline, ads are still shown but are non-personalised. You can
+      change this at any time in iOS Settings → Privacy &amp; Security → Tracking. See
+      <a href="https://www.inmobi.com/privacy-policy" rel="noopener">InMobi's privacy policy</a>.</li>
+  <li><strong>Google Firebase</strong> (Crashlytics, Authentication, Cloud Firestore, Cloud Functions, Cloud Storage, Cloud Messaging) —
+      used for crash reporting and the optional invite feature in offline-first apps, and to store your account,
+      messages, and attachments in cloud-connected apps such as Project Hub. Firebase processes this data on
+      Google's servers on our behalf. See <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase's privacy information</a>
+      and <a href="https://policies.google.com/privacy" rel="noopener">Google's Privacy Policy</a>.</li>
   <li><strong>Sign in with Apple</strong> &amp; <strong>Google Sign-In</strong> — used only to authenticate you in cloud-connected apps. If you use Apple's “Hide My Email,” we receive a private relay address.</li>
   <li><strong>Apple StoreKit</strong> — processes in-app purchases and subscriptions. Governed by Apple's privacy policy.</li>
   <li><strong>Apple iCloud</strong> — if you enable iCloud sync, your data syncs via your Apple ID. Managed by Apple; we have no access.</li>
   <li><strong>Apple HealthKit</strong> — for apps that use it, reads the specific data types you authorize. We never write, upload, or share HealthKit data.</li>
-  <li><strong>Google AdMob</strong> — <em>in offline apps that display ads</em>, Google's Mobile Ads SDK may access the Advertising Identifier (IDFA) and device diagnostics to serve and measure ads. This happens only if you consent via the Apple App Tracking Transparency prompt. You can opt out in iOS Settings → Privacy &amp; Security → Tracking. See <a href="https://policies.google.com/technologies/ads" rel="noopener">Google's Ads privacy policy</a>.</li>
-  <li><strong>Google User Messaging Platform (UMP)</strong> — for GDPR-region users of ad-supported apps, shows a consent dialog before any ad network is initialized.</li>
   <li><strong>Open Library API</strong> — ReadingLog sends book search queries to openlibrary.org over HTTPS. No personal identifiers are transmitted.</li>
 </ul>
 
 <h2>Advertising (Ad-Supported Apps Only)</h2>
-<p>Apps marked "Free with In-App Purchases" may show banner and interstitial advertisements from Google AdMob. Purchasing the premium subscription removes all ads immediately. Ads are never shown in:</p>
+<p>Apps marked "Free with In-App Purchases" may show banner, interstitial, and rewarded advertisements from
+<strong>InMobi</strong>. Purchasing the premium subscription removes all ads immediately. Ads are never shown in:</p>
 <ul>
   <li>Any app listed in the Apple App Store <strong>Kids</strong> category.</li>
   <li>Any app targeted at children under 13.</li>
   <li>Any cloud-connected app such as Project Hub (these contain no ads).</li>
 </ul>
+<p>In apps that handle sensitive personal records, ads are additionally kept out of the screens where you
+create, review, or export that content — they appear only in peripheral areas of the app.</p>
+<p>Where required by law (for example in the EU/UK), a consent dialog is presented before any advertising
+SDK is initialised, and your choice is respected on every subsequent launch.</p>
 
 <h2>Children's Privacy</h2>
-<p>We do not knowingly collect personal information from children under 13. Apps designed for children operate entirely offline, do not include third-party analytics or behavioral advertising, and comply with the Apple App Store Kids category rules and COPPA. Cloud-connected apps such as Project Hub are not directed to children under 13.</p>
+<p>We do not knowingly collect personal information from children under 13, and we comply with the Children's
+Online Privacy Protection Act (COPPA).</p>
+<p><strong>Most of our family apps are tools for parents</strong> — baby and feeding logs, vaccination records,
+allowance trackers, chore charts and screen-time journals are used by the adult, not the child. These are not
+directed at children.</p>
+<p><strong>For the small number of apps a child uses directly</strong>, advertising runs in
+<strong>age-restricted mode</strong>: ads are contextual and non-personalised, the advertising identifier (IDFA)
+is not used, and there is no behavioral tracking, profiling, or sharing of data with advertisers for that
+audience. Premium removes ads entirely.</p>
+<p>In every case, the content created in the app — a child's name, routine, word list, progress or records —
+stays on the device and is never uploaded to us or shared with any advertiser. Where a children's app offers a
+feature that needs a network connection, that connection is limited to what the feature itself requires. We do
+not ask children for personal details in order to use an app, and cloud-connected apps such as Project Hub are
+not directed to children under 13.</p>
 
 <h2>Data Retention &amp; Deletion</h2>
-<p>For offline apps, all data is stored locally on your device — you can delete everything at any time by deleting the app or clearing data from the in-app Settings screen, and no residual data remains on servers because we do not operate any for those apps.</p>
+<p>For offline-first apps, the content you create is stored locally on your device — you can delete everything
+at any time by deleting the app or clearing data from the in-app Settings screen. Crash reports are retained by
+Firebase Crashlytics for a limited period under Google's retention policy. If you used an app's invite feature,
+you can delete the associated anonymous record from <em>Settings → Delete Account</em> in that app.</p>
 <p>For cloud-connected apps (e.g. Project Hub), we retain your account and messages while your account exists. You can permanently delete your account and all associated data at any time from <em>Settings → Delete Account</em> in the app, which removes it from our Firebase database and authentication system.</p>
 
 <h2>Your Rights (GDPR, CCPA)</h2>
-<p>If you are located in the EU, UK, or California you have rights including access, rectification, erasure, and objection regarding personal data. For offline apps you exercise these directly on your device. For cloud-connected apps you can delete your data in-app, or contact us for any other request at the email below.</p>
+<p>If you are located in the EU, UK, or California you have rights including access, rectification, erasure, and objection regarding personal data. For offline-first apps you exercise these directly on your device. For cloud-connected apps you can delete your data in-app, or contact us for any other request at the email below.</p>
 
 <h2>Changes to This Policy</h2>
 <p>If we update this policy, the revised version will be posted at this URL with an updated "Last updated" date. Material changes will be communicated through an in-app notice where feasible.</p>
